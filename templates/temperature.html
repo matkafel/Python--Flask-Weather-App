@@ -1,0 +1,114 @@
+<head>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Gugi');
+
+		body{
+			background-image: url("http://backgrounddownload.com/wp-content/uploads/2018/09/2d-sky-background-2.jpg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			color: black;
+			font-family: 'Gugi';
+			margin: 0;
+			padding: 0;
+
+		}
+		h1{
+			margin-top: 3%;
+			text-align: center;
+			font-size: 40px;
+		}
+
+		span{
+  		text-transform: capitalize;
+		}
+
+		.main{
+		margin-top: 8%;
+		position: relative;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		text-transform: uppercase;
+		}
+
+		.four{
+		margin-right: 5%;
+		}
+
+		input{
+		font-size: 20px;
+		display: block;
+		margin-left: 38%;
+		margin-top: 5%;
+		position: relative;
+  		display: block;
+  		color: white;
+  		border: solid 2px black;
+  		border-radius: 20px;
+  		text-transform: uppercase;
+  		letter-spacing: 2px;
+ 		font-weight: bold;
+  		padding: 20px 3px;
+  		transition: 0.1s;
+  		text-align: center;
+  		font-family: Helvetica;
+  		text-decoration: none;
+  		background-color: #292c2f;
+		cursor: pointer;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+<h1> Pogoda w <span>{{ city }}</span> o godzinie {{time }}</h1>
+
+<div class="main">
+ <br>
+	<div class="one">
+	<h2> Godzina : {{data['list'][0]['dt_txt'].split()[1]  }} </h2>
+	<h3>Temperatura: {{ data['list'][0]['main']['temp'] }} C </h3>
+	<h3> Wiatr: {{ data['list'][0]['wind']['speed'] }} m/s</h3>
+	<h3> Poziom zachmurzenia: {{ data['list'][0]['clouds']['all'] }}</h3>
+	<h3>Cisnienie: {{ data['list'][0]['main']['pressure']  }}hPa</h3>
+	</div>
+
+<br>
+	<div class="two">
+	<h2> Godzina : {{data['list'][1]['dt_txt'].split()[1]  }} </h2>
+		<h3>Temperatura: {{ data['list'][1]['main']['temp'] }}C </h3>
+	<h3> Wiatr: {{ data['list'][1]['wind']['speed']}}m/s</h3>
+	<h3> Poziom zachmurzenia: {{ data['list'][1]['clouds']['all'] }}</h3>
+	<h3>Cisnienie: {{ data['list'][1]['main']['pressure']}}hPa</h3>
+	</div>
+<br>
+	<div class="three">
+	<h2> Godzina : {{data['list'][2]['dt_txt'].split()[1]  }} </h2>
+		<h3>Temperatura: {{ data['list'][2]['main']['temp'] }} C </h3>
+	<h3> Wiatr: {{ data['list'][2]['wind']['speed'] }}m/s</h3>
+	<h3> Poziom zachmurzenia: {{ data['list'][2]['clouds']['all'] }}</h3>
+	<h3>Cisnienie: {{ data['list'][2]['main']['pressure'] }}hPa</h3>
+		</div>
+<br>
+	<div class="four">
+	<h2> Godzina : {{data['list'][3]['dt_txt'].split()[1]  }} </h2>
+	<h3>Temperatura: {{ data['list'][3]['main']['temp'] }} C </h3>
+	<h3> Wiatr: {{ data['list'][3]['wind']['speed'] }}m/s</h3>
+	<h3> Poziom zachmurzenia: {{ data['list'][3]['clouds']['all'] }}</h3>
+	<h3>Cisnienie: {{ data['list'][3]['main']['pressure'] }}hPa</h3>
+		</div>
+
+	</div>
+<div class="button">
+<input type="button" value="Wróć do wyszukiwania" onclick="window.history.back()" />
+	</div>
+
+
+
+
+
+</body>
+</html>
